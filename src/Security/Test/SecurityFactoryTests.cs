@@ -29,6 +29,50 @@ namespace Jebur27.Security.Test
         }
 
         [TestMethod]
+        public void TestGetSecurityManagerOneWithOneParameter()
+        {
+            SecurityFactory target = new SecurityFactory();
+            string userName = "Jebur27";
+            ISecurityManager securityManager = target.GetSecurityManager("Jebur27.Security.SecurityManagerOne", userName);
+            SecurityManagerOne securityManagerOne = new SecurityManagerOne();
+            Assert.AreEqual(securityManager.UserName, userName);
+        }
+
+        [TestMethod]
+        public void TestGetSecurityManagerTwoWithOneParameter()
+        {
+            SecurityFactory target = new SecurityFactory();
+            string userName = "Jebur27";
+            ISecurityManager securityManager = target.GetSecurityManager("Jebur27.Security.SecurityManagerTwo", userName);
+            SecurityManagerTwo securityManagerOne = new SecurityManagerTwo();
+            Assert.AreEqual(securityManager.UserName, userName);
+        }
+
+        [TestMethod]
+        public void TestGetSecurityManagerOneWithTwoParameters()
+        {
+            SecurityFactory target = new SecurityFactory();
+            string userName = "Jebur27";
+            int userSecurityLevel = 3;
+            ISecurityManager securityManager = target.GetSecurityManager("Jebur27.Security.SecurityManagerOne", userName, userSecurityLevel);
+            SecurityManagerOne securityManagerOne = new SecurityManagerOne();
+            Assert.AreEqual(securityManager.UserName, userName);
+            Assert.AreEqual(securityManager.UserSecurityLevel, userSecurityLevel);
+        }
+
+        [TestMethod]
+        public void TestGetSecurityManagerTwoWithTwoParameters()
+        {
+            SecurityFactory target = new SecurityFactory();
+            string userName = "Jebur27";
+            int userSecurityLevel = 3;
+            ISecurityManager securityManager = target.GetSecurityManager("Jebur27.Security.SecurityManagerTwo", userName, userSecurityLevel);
+            SecurityManagerTwo securityManagerOne = new SecurityManagerTwo();
+            Assert.AreEqual(securityManager.UserName, userName);
+            Assert.AreEqual(securityManager.UserSecurityLevel, userSecurityLevel);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(TypeNotFoundFactoryException))]
         public void TestGetSecurityManagerFail()
         {
