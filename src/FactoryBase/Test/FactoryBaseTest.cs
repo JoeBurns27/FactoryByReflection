@@ -1,4 +1,5 @@
 ﻿using Jebur27.FactoryBase;
+using Jebur27.FactoryBase.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -13,8 +14,6 @@ namespace Test
     [TestClass()]
     public class FactoryBaseTest
     {
-
-
         private TestContext testContextInstance;
 
         /// <summary>
@@ -71,10 +70,10 @@ namespace Test
         {
             TestProtectedMethods target = new TestProtectedMethods();
 
-            Type tt = typeof(Jebur27.Security.Interfaces.ISecurityManager);
+            Type testType = typeof(Jebur27.Security.Interfaces.ISecurityManager);
             string typeName = "Jebur27.Security.SecurityManagerOne";
             Type actual;
-            actual = target.GetNamedTypeTest(typeName, tt); // this.GetType());
+            actual = target.GetNamedTypeTest(typeName, testType); 
             Assert.AreEqual(typeName, actual.FullName);
         }
 
@@ -89,6 +88,36 @@ namespace Test
             Type actual;
             actual = target.GetNamedTypeTest(typeName, this.GetType());
             Assert.AreEqual(typeName, actual.FullName);
+        }
+
+        [TestMethod()]
+        public void TypeNotFoundFactoryExceptionTest1()
+        {
+            string typeName = "TestTypeName";
+            TypeNotFoundFactoryException target = new TypeNotFoundFactoryException(typeName);
+            Assert.AreEqual(typeName, target.TypeName);
+        }
+
+        [TestMethod()]
+        public void TypeNotFoundFactoryExceptionTest2()
+        {
+            string typeName = "TestTypeName";
+            string message = "Error Message";
+            TypeNotFoundFactoryException target = new TypeNotFoundFactoryException(typeName, message);
+            Assert.AreEqual(typeName, target.TypeName);
+            Assert.AreEqual(message, target.Message);
+        }
+
+        [TestMethod()]
+        public void TypeNotFoundFactoryExceptionTest3()
+        {
+            string typeName = "TestTypeName";
+            string message = "Error Message";
+            ArgumentException argumentException = new ArgumentException();
+            TypeNotFoundFactoryException target = new TypeNotFoundFactoryException(typeName, message, argumentException);
+            Assert.AreEqual(typeName, target.TypeName);
+            Assert.AreEqual(message, target.Message);
+            Assert.AreEqual(argumentException.GetType(), target.InnerException.GetType());
         }
 
         protected class TestProtectedMethods : BaseFactory

@@ -8,6 +8,7 @@ namespace Jebur27.FactoryBase.Exceptions
     /// <summary>
     /// Exception class for the Jebur27.FactoryBase.Exceptions.TypeNotFoundFactoryException namespace.
     /// </summary>
+    [Serializable()]
     public class TypeNotFoundFactoryException : Exception
     {
         string typeName;
@@ -15,7 +16,7 @@ namespace Jebur27.FactoryBase.Exceptions
         public string TypeName
         {
             get { return typeName; }
-            set { typeName = value; }
+            protected set { typeName = value; }
         }
 
         /// <summary>
@@ -23,7 +24,7 @@ namespace Jebur27.FactoryBase.Exceptions
         /// </summary>
         public TypeNotFoundFactoryException(string typeName)
         {
-            this.typeName = typeName;
+            TypeName = typeName;
         }
 
         /// <summary>
@@ -33,7 +34,7 @@ namespace Jebur27.FactoryBase.Exceptions
         public TypeNotFoundFactoryException(string typeName, string message)
             : base(message)
         {
-            this.typeName = typeName;
+            TypeName = typeName;
         }
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace Jebur27.FactoryBase.Exceptions
         public TypeNotFoundFactoryException(string typeName, string message, Exception inner)
             : base(message, inner)
         {
-            this.typeName = typeName;
+            TypeName = typeName;
         }
     }
 
