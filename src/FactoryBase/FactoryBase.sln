@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jebur27.Security", "..\Secu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jebur27.Security.Test", "..\Security\Test\Jebur27.Security.Test.csproj", "{F2A98649-2C44-4428-82C7-7C1865C6ADF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jebur27.Security.Factory", "..\Security\Factory\Jebur27.Security.Factory.csproj", "{BC67149D-6559-4422-BD88-A082CB847BA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jebur27.Security.Factory.Test", "..\Security\Factory\Test\Jebur27.Security.Factory.Test.csproj", "{4E8CD244-8515-41FD-8459-902D1386AF26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{F2A98649-2C44-4428-82C7-7C1865C6ADF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2A98649-2C44-4428-82C7-7C1865C6ADF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2A98649-2C44-4428-82C7-7C1865C6ADF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC67149D-6559-4422-BD88-A082CB847BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC67149D-6559-4422-BD88-A082CB847BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC67149D-6559-4422-BD88-A082CB847BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC67149D-6559-4422-BD88-A082CB847BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8CD244-8515-41FD-8459-902D1386AF26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8CD244-8515-41FD-8459-902D1386AF26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8CD244-8515-41FD-8459-902D1386AF26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8CD244-8515-41FD-8459-902D1386AF26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
