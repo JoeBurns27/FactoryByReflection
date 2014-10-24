@@ -9,7 +9,7 @@ using Jebur27.Security.Factory;
 namespace Test
 {
     [TestClass]
-    public class UnitTest1
+    public class SecurityFactoryTests2
     {
         [TestMethod]
         public void TestGetSecurityManagerOne()
