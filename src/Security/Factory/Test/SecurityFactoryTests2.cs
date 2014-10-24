@@ -20,5 +20,13 @@ namespace Test
             Assert.AreEqual(securityManager.GetType(), securityManagerOne.GetType());
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(TypeNotFoundFactoryException))]
+        public void TestGetSecurityManagerFail()
+        {
+            Factory target = new Factory();
+            ISecurityManager securityManager = target.GetSecurityManager("Jebur27.Security.DoesNotExist");
+        }
+
     }
 }

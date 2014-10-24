@@ -118,8 +118,6 @@ namespace Jebur27.Security.Test
         {
             SecurityFactory target = new SecurityFactory();
             ISecurityManager securityManager = target.GetSecurityManager("Jebur27.Security.DoesNotExist");
-            SecurityManagerOne securityManagerOne = new SecurityManagerOne();
-            Assert.AreEqual(securityManager.GetType(), securityManagerOne.GetType());
         }
 
         [TestMethod]
@@ -129,8 +127,6 @@ namespace Jebur27.Security.Test
             string userName = "Jebur27";
             SecurityFactory target = new SecurityFactory();
             ISecurityManager securityManager = target.GetSecurityManager("Jebur27.Security.DoesNotExist", userName);
-            SecurityManagerOne securityManagerOne = new SecurityManagerOne();
-            Assert.AreEqual(securityManager.GetType(), securityManagerOne.GetType());
         }
 
         [TestMethod]
@@ -141,8 +137,6 @@ namespace Jebur27.Security.Test
             int userSecurityLevel = 3;
             SecurityFactory target = new SecurityFactory();
             ISecurityManager securityManager = target.GetSecurityManager("Jebur27.Security.DoesNotExist", userName, userSecurityLevel);
-            SecurityManagerOne securityManagerOne = new SecurityManagerOne();
-            Assert.AreEqual(securityManager.GetType(), securityManagerOne.GetType());
         }
 
     }
