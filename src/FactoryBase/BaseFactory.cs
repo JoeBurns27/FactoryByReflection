@@ -6,8 +6,17 @@ using System.Text;
 
 namespace Jebur27.FactoryBase
 {
+    /// <summary>
+    /// Base class used to create specific Factories
+    /// </summary>
     public class BaseFactory
     {
+        /// <summary>
+        /// Using Reflection, creates an object of Type typeName
+        /// </summary>
+        /// <param name="typeName">Fully qualified name of the Type to create</param>
+        /// <param name="typeOfCaller">Used by GetNamedType method to find the type to create</param>
+        /// <returns>If found, an object of the named Type, else null</returns>
         public object CreateObject(string typeName, Type typeOfCaller)
         {
             Type namedType = GetNamedType(typeName, typeOfCaller);
@@ -18,6 +27,13 @@ namespace Jebur27.FactoryBase
             return o;
         }
 
+        /// <summary>
+        /// Using Reflection, creates an object of Type typeName
+        /// </summary>
+        /// <param name="typeName">Fully qualified name of the Type to create</param>
+        /// <param name="typeOfCaller">Used by GetNamedType method to find the type to create</param>
+        /// <param name="parms">An Object array of constructor parameters</param>
+        /// <returns>If found, an object of the named Type, else null</returns>
         public object CreateObject(string typeName, Type typeOfCaller, object[] parms)
         {
             object o = null;
@@ -28,6 +44,12 @@ namespace Jebur27.FactoryBase
             return o;
         }
 
+        /// <summary>
+        /// Using Reflection, finds Type typeName
+        /// </summary>
+        /// <param name="typeName">Fully qualified name of the Type to create</param>
+        /// <param name="typeOfCaller">Starting Type to find the type to create</param>
+        /// <returns>Type if found, else null</returns>
         protected Type GetNamedType(string typeName, Type typeOfCaller)
         {
             Assembly assembly = Assembly.GetAssembly(typeOfCaller);
