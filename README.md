@@ -29,7 +29,4 @@ Contains three classes:
 - **SecurityFactory** - A factory based on the BaseFactory that creates an ISecurityManager object depending on the inputs. This factory also throws TypeNotFoundFactoryException if the type does not exist. 
 
 
-```csharp
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
+
