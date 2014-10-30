@@ -9,7 +9,8 @@ namespace Jebur27.FactoryBase
     /// <summary>
     /// Base class used to create specific Factories
     /// </summary>
-    public class BaseFactory
+
+    public abstract class BaseFactory
     {
         /// <summary>
         /// Using Reflection, creates an object of Type typeName
