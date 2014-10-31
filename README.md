@@ -21,12 +21,18 @@ Contains two classes:
 
 
 ##Jebur27.Security
-Contains three classes:
+Contains three classes and one interface:
 
 - **ISecurityManager** - Interface for Security Managers; 
 - **SecurityManagerOne** - A class stub that implements the ISecurityManager; 
 - **SecurityManagerTwo** - A class stub that implements the ISecurityManager; 
 - **SecurityFactory** - A factory based on the BaseFactory that creates an ISecurityManager object depending on the inputs. This factory also throws TypeNotFoundFactoryException if the type does not exist. 
+
+
+##Jebur27.Security.Factory
+Contains one class:
+
+- **Factory** - A factory based on the BaseFactory that creates an ISecurityManager object depending on the inputs. This factory also throws TypeNotFoundFactoryException if the type does not exist. 
 
 
 
