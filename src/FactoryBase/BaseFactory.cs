@@ -9,7 +9,6 @@ namespace Jebur27.FactoryBase
     /// <summary>
     /// Base class used to create specific Factories
     /// </summary>
-
     public abstract class BaseFactory
     {
         /// <summary>
